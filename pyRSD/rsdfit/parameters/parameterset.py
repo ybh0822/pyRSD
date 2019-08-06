@@ -34,7 +34,7 @@ class ParameterSet(lmfit.Parameters):
     """
     def __init__(self, *args, **kwargs):
 
-        kwargs['asteval'] = lmfit.asteval.Interpreter(symtable=SmartSymTable(self))
+        kwargs['asteval'] = asteval.Interpreter(symtable=SmartSymTable(self))
         super(ParameterSet, self).__init__(*args, **kwargs)
         self._prepared = False
         self._registered_functions = {}
@@ -279,7 +279,7 @@ class ParameterSet(lmfit.Parameters):
         Register a function in the ``symtable`` of the ``asteval`` attribute
         """
         if not hasattr(self, '_asteval'):
-            self._asteval = lmfit.asteval.Interpreter()
+            self._asteval = asteval.Interpreter()
         self._asteval.symtable[name] = function
         self._registered_functions[name] = function
 
