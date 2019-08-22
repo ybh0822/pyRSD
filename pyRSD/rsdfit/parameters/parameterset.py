@@ -11,6 +11,7 @@ import collections
 from six import string_types
 import lmfit
 import contextlib
+import asteval
 
 from . import tools, Parameter
 from ... import os, numpy as np
