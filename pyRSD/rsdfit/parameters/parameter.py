@@ -171,7 +171,7 @@ class Parameter(PickeableCache, lmfit.Parameter):
         # If you just assign to self._val then
         # _expr_eval.symtable[self.name]
         # becomes stale if parameter.expr is not None.
-        if (isinstance(self._val, uncertainties.Variable)
+        if (isinstance(self._val, uncertainties.core.Variable)
             and self._val is not np.nan):
 
             try:
