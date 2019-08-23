@@ -13,6 +13,7 @@ from ... import numpy as np
 from ...rsd._cache import CacheSchema, parameter, cached_property
 
 import lmfit
+import uncertainties
 import copyreg
 from six import add_metaclass
 
@@ -170,7 +171,7 @@ class Parameter(PickeableCache, lmfit.Parameter):
         # If you just assign to self._val then
         # _expr_eval.symtable[self.name]
         # becomes stale if parameter.expr is not None.
-        if (isinstance(self._val, lmfit.uncertainties.Variable)
+        if (isinstance(self._val, uncertainties.Variable)
             and self._val is not np.nan):
 
             try:
