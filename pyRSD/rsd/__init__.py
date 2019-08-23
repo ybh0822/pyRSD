@@ -57,7 +57,7 @@ def load_model(filename, show_warning=True):
         raise ValueError("file name should end in %s" %desired_ext)
 
     # load
-    model = numpy.load(filename, encoding='latin1').tolist()
+    model = numpy.load(filename, encoding='latin1',allow_pickle=True).tolist()
 
     # check the version
     if show_warning and (not hasattr(model, '__version__') or model.__version__ != __version__):
