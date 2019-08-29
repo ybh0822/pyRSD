@@ -35,7 +35,7 @@ class DarkMatterSpectrum(Cache, SimLoaderMixin, PTIntegralsMixin):
                        k0_low=5e-3,
                        linear_power_file=None,
                        Pdv_model_type='jennings',
-                       redshift_params=[],
+                       redshift_params=['f', 'sigma8_z'],
                        **kwargs):
         """
         Parameters
