@@ -76,7 +76,7 @@ class LBFGSResults(object):
         Load a numpy ``npz`` file and return the corresponding :class:`LBFGSResults` object
         """
         toret = cls.__new__(cls)
-        with np.load(filename, encoding='latin1') as ff:
+        with np.load(filename, encoding='latin1', allow_pickle=True) as ff:
             for k, v in ff.items():
                 setattr(toret, k, v)
 
