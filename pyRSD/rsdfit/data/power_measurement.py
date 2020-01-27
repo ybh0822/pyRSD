@@ -455,7 +455,7 @@ class PowerDataSchema(Cache):
         """
         return val
 
-    @parameter(default=1.1)
+    @parameter(default=1.0)
     def window_kmax(self, val):
         """
         Default kmax value to use on the grid when convolving the model.
